@@ -61,19 +61,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Email display function
-function showEmail() {
-    const emailDisplay = document.getElementById('emailDisplay');
+// Email display functionality
+document.addEventListener('DOMContentLoaded', () => {
     const emailBtn = document.getElementById('emailBtn');
+    const emailDisplay = document.getElementById('emailDisplay');
     
-    if (emailDisplay.style.display === 'none') {
-        emailDisplay.style.display = 'block';
-        emailBtn.innerHTML = '<span>📧</span> Hide Email';
-    } else {
-        emailDisplay.style.display = 'none';
-        emailBtn.innerHTML = '<span>📧</span> Email';
+    if (emailBtn && emailDisplay) {
+        emailBtn.addEventListener('click', function() {
+            if (emailDisplay.style.display === 'none' || emailDisplay.style.display === '') {
+                emailDisplay.style.display = 'block';
+                emailBtn.innerHTML = '<span>📧</span> Hide Email';
+            } else {
+                emailDisplay.style.display = 'none';
+                emailBtn.innerHTML = '<span>📧</span> Email';
+            }
+        });
     }
-}
+});
 
 // Console message for visitors
 console.log('%c👋 Hey there!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
