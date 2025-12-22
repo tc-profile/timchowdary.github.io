@@ -50,8 +50,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all project cards
+// Initialize all DOM-dependent functionality
 document.addEventListener('DOMContentLoaded', () => {
+    // Observe all project cards for animation
     const cards = document.querySelectorAll('.project-card, .skill-category');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -59,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
         observer.observe(card);
     });
-});
-
-// Email and Mobile display functionality
-document.addEventListener('DOMContentLoaded', () => {
+    
     // Email button functionality
     const emailBtn = document.getElementById('emailBtn');
     const emailDisplay = document.getElementById('emailDisplay');
