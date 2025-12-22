@@ -61,8 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Email display functionality
+// Email and Mobile display functionality
 document.addEventListener('DOMContentLoaded', () => {
+    // Email button functionality
     const emailBtn = document.getElementById('emailBtn');
     const emailDisplay = document.getElementById('emailDisplay');
     
@@ -74,6 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 emailDisplay.style.display = 'none';
                 emailBtn.innerHTML = '<span>📧</span> Email';
+            }
+        });
+    }
+    
+    // Mobile button functionality
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileDisplay = document.getElementById('mobileDisplay');
+    
+    if (mobileBtn && mobileDisplay) {
+        mobileBtn.addEventListener('click', function() {
+            if (mobileDisplay.style.display === 'none' || mobileDisplay.style.display === '') {
+                mobileDisplay.style.display = 'block';
+                mobileBtn.innerHTML = '<span>📱</span> Hide Mobile';
+            } else {
+                mobileDisplay.style.display = 'none';
+                mobileBtn.innerHTML = '<span>📱</span> Mobile';
             }
         });
     }
