@@ -283,16 +283,20 @@ body {
 
 /* About Section */
 .about-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .about-content p {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-light);
-    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Projects Grid */
