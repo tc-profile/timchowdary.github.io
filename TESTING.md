@@ -12,7 +12,7 @@ This guide will help you test your website locally before pushing changes to Git
    cd "/Users/tim.chowdary/cursor/Professional Website"
    ```
 
-3. Run the server script:
+3. **Start the server:**
    ```bash
    ./start-server.sh
    ```
@@ -22,7 +22,17 @@ This guide will help you test your website locally before pushing changes to Git
    http://localhost:8000
    ```
 
-5. To stop the server, press `Ctrl + C` in the terminal
+5. **Stop the server** when done testing:
+   - **Option A:** Press `Ctrl + C` in the terminal where server is running
+   - **Option B:** Run the stop script:
+     ```bash
+     ./stop-server.sh
+     ```
+
+**Note:** If port 8000 is already in use, the script will:
+- Detect the running server
+- Give you options to: open existing server, restart, or cancel
+- Smart handling prevents "Address already in use" errors
 
 ### Method 2: Direct Python Command
 
