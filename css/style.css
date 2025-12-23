@@ -178,10 +178,19 @@ body {
     box-shadow: var(--shadow-lg);
     border: 5px solid white;
     transition: transform 0.3s ease;
+    /* High-quality image rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: translateZ(0) scale(1.05);
+    -webkit-transform: translateZ(0) scale(1.05);
 }
 
 .about-text {

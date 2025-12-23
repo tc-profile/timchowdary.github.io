@@ -64,3 +64,7 @@ test.html
 test/
 *.test.html
 
+# Original large images (keep optimized versions only)
+*-original.*
+images/*-original.*
+
