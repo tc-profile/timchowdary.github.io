@@ -29,13 +29,38 @@
     <div class="main-content">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="container">
-                <h1>Tim Chowdary</h1>
-                <p class="tagline-subtitle">Welcome to My Portfolio</p>
-                <p class="tagline">Thought Leadership | AI Automations | Multi Cloud Expert</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Tim Chowdary</h1>
+                    <p class="tagline-subtitle">Welcome to My Portfolio</p>
+                    <p class="tagline">Thought Leadership | AI Automations | Multi Cloud Expert</p>
+                    <div class="hero-contact-links">
+                        <button id="emailBtnHero" class="hero-contact-btn">
+                            <span>📧</span> Email
+                        </button>
+                        <button id="mobileBtnHero" class="hero-contact-btn">
+                            <span>📱</span> Mobile
+                        </button>
+                        <a href="https://github.com/tc-personal" class="hero-contact-btn" target="_blank">
+                            <span>💻</span> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/tim-chowdary/" class="hero-contact-btn" target="_blank">
+                            <span>💼</span> LinkedIn
+                        </a>
+                    </div>
+                    <div id="emailDisplayHero" style="display: none; margin-top: 15px; padding: 12px; background: rgba(37, 99, 235, 0.1); border-radius: 8px; text-align: left;">
+                        <p style="margin: 0; font-size: 16px; color: #2563eb; font-weight: 500;">📧 tim.chowdary@gmail.com</p>
+                    </div>
+                    <div id="mobileDisplayHero" style="display: none; margin-top: 15px; padding: 12px; background: rgba(37, 99, 235, 0.1); border-radius: 8px; text-align: left;">
+                        <p style="margin: 0; font-size: 16px; color: #2563eb; font-weight: 500;">📱 +91 96115 15577</p>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <img src="images/profile-photo-500.jpg" 
+                         srcset="images/profile-photo-500.jpg 1x, images/profile-photo-optimized.jpg 2x"
+                         alt="Tim Chowdary - Professional Photo" 
+                         class="profile-image-hero"
+                         loading="lazy">
                 </div>
             </div>
         </section>
@@ -45,20 +70,11 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-photo">
-                    <img src="images/profile-photo-500.jpg" 
-                         srcset="images/profile-photo-500.jpg 1x, images/profile-photo-optimized.jpg 2x"
-                         alt="Tim Chowdary - Professional Photo" 
-                         class="profile-image"
-                         loading="lazy">
-                </div>
-                <div class="about-text">
-                    <p>
-                        I specialize in thought leadership, designing enterprise-grade data platforms, 
-                        migration accelerators, and agentic AI frameworks that help organizations modernize faster, 
-                        operate smarter, and innovate with confidence.
-                    </p>
-                </div>
+                <p>
+                    I specialize in thought leadership, designing enterprise-grade data platforms, 
+                    migration accelerators, and agentic AI frameworks that help organizations modernize faster, 
+                    operate smarter, and innovate with confidence.
+                </p>
             </div>
         </div>
     </section>

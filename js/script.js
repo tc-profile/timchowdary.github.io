@@ -111,6 +111,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Hero Email button functionality
+    const emailBtnHero = document.getElementById('emailBtnHero');
+    const emailDisplayHero = document.getElementById('emailDisplayHero');
+    
+    if (emailBtnHero && emailDisplayHero) {
+        emailBtnHero.addEventListener('click', function() {
+            if (emailDisplayHero.style.display === 'none' || emailDisplayHero.style.display === '') {
+                emailDisplayHero.style.display = 'block';
+                emailBtnHero.innerHTML = '<span>📧</span> Hide Email';
+            } else {
+                emailDisplayHero.style.display = 'none';
+                emailBtnHero.innerHTML = '<span>📧</span> Email';
+            }
+        });
+    }
+    
+    // Hero Mobile button functionality
+    const mobileBtnHero = document.getElementById('mobileBtnHero');
+    const mobileDisplayHero = document.getElementById('mobileDisplayHero');
+    
+    if (mobileBtnHero && mobileDisplayHero) {
+        mobileBtnHero.addEventListener('click', function() {
+            if (mobileDisplayHero.style.display === 'none' || mobileDisplayHero.style.display === '') {
+                mobileDisplayHero.style.display = 'block';
+                mobileBtnHero.innerHTML = '<span>📱</span> Hide Mobile';
+            } else {
+                mobileDisplayHero.style.display = 'none';
+                mobileBtnHero.innerHTML = '<span>📱</span> Mobile';
+            }
+        });
+    }
 });
 
 // Console message for visitors

@@ -121,13 +121,50 @@ body {
 .hero {
     background: #f5f5f5;
     color: #1a1a1a;
-    padding: 4rem 0 3rem;
-    text-align: center;
+    padding: 2.5rem 0 2rem;
     border-bottom: 1px solid #e0e0e0;
 }
 
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-photo {
+    flex: 0 0 auto;
+}
+
+.profile-image-hero {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.profile-image-hero:hover {
+    transform: translateZ(0) scale(1.05);
+    -webkit-transform: translateZ(0) scale(1.05);
+}
+
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
     color: #1a1a1a;
@@ -135,19 +172,57 @@ body {
 }
 
 .hero .tagline-subtitle {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     color: #333333;
     font-weight: 300;
     animation: fadeInUp 0.8s ease-out 0.1s backwards;
 }
 
 .hero .tagline {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
     color: #555555;
     font-weight: 400;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Hero Contact Links */
+.hero-contact-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    margin-top: 1rem;
+}
+
+.hero-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background-color: transparent;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid #1a1a1a;
+    transition: all 0.3s;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.hero-contact-btn:hover {
+    background-color: #1a1a1a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-contact-btn span {
+    font-size: 1.125rem;
 }
 
 .cta-buttons {
@@ -208,52 +283,15 @@ body {
 
 /* About Section */
 .about-content {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    text-align: center;
 }
 
-.about-photo {
-    flex: 0 0 auto;
-}
-
-.profile-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--shadow-lg);
-    border: 5px solid white;
-    transition: transform 0.3s ease;
-    /* High-quality image rendering */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: bicubic;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-
-.profile-image:hover {
-    transform: translateZ(0) scale(1.05);
-    -webkit-transform: translateZ(0) scale(1.05);
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
+.about-content p {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-light);
-}
-
-.about-text p {
     margin: 0;
 }
 
@@ -447,6 +485,33 @@ body {
         display: flex;
     }
     
+    .hero-container {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-contact-links {
+        justify-content: center;
+    }
+    
+    .hero-contact-btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero-photo {
+        margin-bottom: 1rem;
+    }
+    
+    .profile-image-hero {
+        width: 150px;
+        height: 150px;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -482,26 +547,16 @@ body {
         padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
     }
-    
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .about-text {
-        text-align: center;
-    }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding: 3rem 0 2rem;
+        padding: 2rem 0 1.5rem;
+    }
+    
+    .profile-image-hero {
+        width: 120px;
+        height: 120px;
     }
     
     .hero h1 {
