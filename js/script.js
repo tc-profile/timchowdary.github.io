@@ -192,6 +192,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Thought Leadership topic switching
+    const tlNavBtns = document.querySelectorAll('.tl-nav-btn');
+    const tlTopicContents = document.querySelectorAll('.tl-topic-content');
+    
+    tlNavBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            
+            // Remove active class from all buttons
+            tlNavBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all topic contents
+            tlTopicContents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected topic content
+            const targetContent = document.getElementById(`${topic}-content`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+    
+    // About Me topic switching
+    const aboutNavBtns = document.querySelectorAll('.about-nav-btn');
+    const aboutTopicContents = document.querySelectorAll('.about-topic-content');
+    
+    aboutNavBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            
+            // Remove active class from all buttons
+            aboutNavBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all topic contents
+            aboutTopicContents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected topic content
+            const targetContent = document.getElementById(`${topic}-content`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
 });
 
 // Console message for visitors

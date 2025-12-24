@@ -334,6 +334,49 @@ body {
     animation: fadeIn 0.4s ease-in;
 }
 
+/* About Me Section */
+.about-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-nav-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-nav-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.about-nav-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-topic-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.about-topic-content.active {
+    display: block;
+}
+
 .about-content {
     max-width: 1200px;
     margin: 0;
@@ -352,6 +395,72 @@ body {
 }
 
 /* Thought Leadership Section */
+.thought-leadership-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tl-nav-btn {
+    padding: 0.75rem 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tl-nav-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tl-nav-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.tl-topic-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.tl-topic-content.active {
+    display: block;
+}
+
+.tl-topic-title {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.wip-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--bg-alt);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.wip-message p:first-child {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.wip-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
 .thought-leadership-content {
     max-width: 1200px;
     margin: 0;

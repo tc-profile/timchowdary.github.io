@@ -13,12 +13,7 @@
         <ul class="sidebar-menu">
             <li><a href="#welcome">Welcome</a></li>
             <li><a href="#about">About Me</a></li>
-            <li class="has-submenu">
-                <span class="menu-parent">Thought Leadership</span>
-                <ul class="submenu">
-                    <li><a href="#dna-teams">DNA of High Performing Teams</a></li>
-                </ul>
-            </li>
+            <li><a href="#thought-leadership">Thought Leadership</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -76,92 +71,139 @@
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    As an RSA Delivery Manager – AI Automations at Databricks India, I help customers accelerate innovation through Data + AI transformation powered by Delta Lake and modern Data Intelligence architectures. I have led the design and delivery of enterprise-scale, multi-agent AI frameworks, including for one of Europe's largest electrical organizations—driving significant improvements in efficiency, accuracy, and time-to-value. I have also architected agentic recruiting automation platforms and bring a proven track record of building, mentoring, and leading high-performing Data & AI teams to deliver business-critical outcomes.
-                </p>
-                <p>
-                    I bring deep, hands-on expertise in cloud-native development across Databricks, AWS, and multi-cloud ecosystems, with a strong emphasis on scalable data architectures, reliability, and access controls. Known for strong customer obsession and a product-first mindset, I excel at translating complex business needs into actionable roadmaps and leading distributed teams to deliver measurable impact across analytics, automation, and AI-driven product initiatives.
-                </p>
-                <p>
-                    Beyond my professional role, I actively write articles and create videos on leadership, Generative AI, and software development. I enjoy "vibe coding" and building mini-projects that push me technically and creatively. Passionate about teaching and mentoring, I regularly visit engineering colleges to share industry trends, guide students on career readiness, and help them prepare for real-world technology roles.
-                </p>
+            
+            <!-- About Topic Selection Buttons -->
+            <div class="about-nav">
+                <button class="about-nav-btn active" data-topic="about-me">About Me</button>
+                <button class="about-nav-btn" data-topic="experience">Professional Experience</button>
+                <button class="about-nav-btn" data-topic="certifications">Certifications and Qualifications</button>
+            </div>
+            
+            <!-- About Me Content -->
+            <div id="about-me-content" class="about-topic-content active">
+                <div class="about-content">
+                    <p>
+                        As an RSA Delivery Manager – AI Automations at Databricks India, I help customers accelerate innovation through Data + AI transformation powered by Delta Lake and modern Data Intelligence architectures. I have led the design and delivery of enterprise-scale, multi-agent AI frameworks, including for one of Europe's largest electrical organizations—driving significant improvements in efficiency, accuracy, and time-to-value. I have also architected agentic recruiting automation platforms and bring a proven track record of building, mentoring, and leading high-performing Data & AI teams to deliver business-critical outcomes.
+                    </p>
+                    <p>
+                        I bring deep, hands-on expertise in cloud-native development across Databricks, AWS, and multi-cloud ecosystems, with a strong emphasis on scalable data architectures, reliability, and access controls. Known for strong customer obsession and a product-first mindset, I excel at translating complex business needs into actionable roadmaps and leading distributed teams to deliver measurable impact across analytics, automation, and AI-driven product initiatives.
+                    </p>
+                    <p>
+                        Beyond my professional role, I actively write articles and create videos on leadership, Generative AI, and software development. I enjoy "vibe coding" and building mini-projects that push me technically and creatively. Passionate about teaching and mentoring, I regularly visit engineering colleges to share industry trends, guide students on career readiness, and help them prepare for real-world technology roles.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Professional Experience Content -->
+            <div id="experience-content" class="about-topic-content">
+                <div class="wip-message">
+                    <p>🚧 Work In Progress</p>
+                    <p class="wip-subtitle">Content coming soon...</p>
+                </div>
+            </div>
+            
+            <!-- Certifications Content -->
+            <div id="certifications-content" class="about-topic-content">
+                <div class="wip-message">
+                    <p>🚧 Work In Progress</p>
+                    <p class="wip-subtitle">Content coming soon...</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- DNA of High Performing Teams Section -->
-    <section id="dna-teams" class="section dynamic-section" style="display: none;">
+    <!-- Thought Leadership Section -->
+    <section id="thought-leadership" class="section dynamic-section" style="display: none;">
         <div class="container">
-            <h2 class="section-title">DNA of High-Performing Teams</h2>
-            <div class="thought-leadership-content">
-                <p class="intro-text">
-                    High-performing teams are not built by chance. They exhibit a distinct DNA—a set of shared values, behaviors, and practices that consistently enable them to rise above challenges and deliver exceptional outcomes. The following traits form the core of that DNA:
-                </p>
-                
-                <div class="dna-two-column">
-                    <div class="dna-traits-column">
-                        <div class="dna-trait">
-                            <h3>Trusted and Authentic Leadership</h3>
-                            <p>
-                                Leaders earn trust through transparency, integrity, and consistency between words and actions. They create psychological safety, empowering teams to speak up, challenge ideas, and take ownership without fear.
-                            </p>
+            <h2 class="section-title">Thought Leadership</h2>
+            
+            <!-- Topic Selection Buttons -->
+            <div class="thought-leadership-nav">
+                <button class="tl-nav-btn active" data-topic="dna">DNA</button>
+                <button class="tl-nav-btn" data-topic="execution">Execution Strategy</button>
+            </div>
+            
+            <!-- DNA Content -->
+            <div id="dna-content" class="tl-topic-content active">
+                <h3 class="tl-topic-title">DNA of High-Performing Teams</h3>
+                <div class="thought-leadership-content">
+                    <p class="intro-text">
+                        High-performing teams are not built by chance. They exhibit a distinct DNA—a set of shared values, behaviors, and practices that consistently enable them to rise above challenges and deliver exceptional outcomes. The following traits form the core of that DNA:
+                    </p>
+                    
+                    <div class="dna-two-column">
+                        <div class="dna-traits-column">
+                            <div class="dna-trait">
+                                <h3>Trusted and Authentic Leadership</h3>
+                                <p>
+                                    Leaders earn trust through transparency, integrity, and consistency between words and actions. They create psychological safety, empowering teams to speak up, challenge ideas, and take ownership without fear.
+                                </p>
+                            </div>
+                            
+                            <div class="dna-trait">
+                                <h3>Not Afraid of Failure</h3>
+                                <p>
+                                    High-performing teams view failure as a learning signal, not a setback. This mindset encourages experimentation, innovation, and informed risk-taking.
+                                </p>
+                            </div>
+                            
+                            <div class="dna-trait">
+                                <h3>Fail Fast, Learn Faster</h3>
+                                <p>
+                                    They identify what doesn't work early, minimize the cost of failure, and rapidly course-correct. Speed of learning becomes a competitive advantage.
+                                </p>
+                            </div>
                         </div>
                         
-                        <div class="dna-trait">
-                            <h3>Not Afraid of Failure</h3>
-                            <p>
-                                High-performing teams view failure as a learning signal, not a setback. This mindset encourages experimentation, innovation, and informed risk-taking.
-                            </p>
-                        </div>
-                        
-                        <div class="dna-trait">
-                            <h3>Fail Fast, Learn Faster</h3>
-                            <p>
-                                They identify what doesn't work early, minimize the cost of failure, and rapidly course-correct. Speed of learning becomes a competitive advantage.
-                            </p>
+                        <div class="dna-image-column">
+                            <div class="dna-image-container sticky-image">
+                                <img src="images/dna-teams-800.png" 
+                                     srcset="images/dna-teams-800.png 1x, images/dna-teams-1200.png 2x"
+                                     alt="DNA of High Performing Teams Infographic" 
+                                     class="dna-image"
+                                     loading="lazy">
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="dna-image-column">
-                        <div class="dna-image-container sticky-image">
-                            <img src="images/dna-teams-800.png" 
-                                 srcset="images/dna-teams-800.png 1x, images/dna-teams-1200.png 2x"
-                                 alt="DNA of High Performing Teams Infographic" 
-                                 class="dna-image"
-                                 loading="lazy">
+                    <div class="dna-full-width-traits">
+                        <div class="dna-trait">
+                            <h3>Resilient and Adaptable</h3>
+                            <p>
+                                When faced with setbacks, these teams recover quickly and refocus on outcomes. Resilience enables them to sustain momentum even in uncertain or high-pressure environments.
+                            </p>
+                        </div>
+                        
+                        <div class="dna-trait">
+                            <h3>Compelling Goals with Clear Strategy</h3>
+                            <p>
+                                They rally around ambitious, well-defined goals supported by coherent strategies and execution plans. Every team member understands the "why," the "what," and the "how."
+                            </p>
+                        </div>
+                        
+                        <div class="dna-trait">
+                            <h3>Interdependent with Respect for Diverse Viewpoints</h3>
+                            <p>
+                                Success is driven by collaboration, not heroics. Teams value diverse perspectives, actively listen, and leverage complementary strengths to make better decisions.
+                            </p>
+                        </div>
+                        
+                        <div class="dna-trait">
+                            <h3>Commitment to Continuous Learning</h3>
+                            <p>
+                                High-performing teams invest in constantly upgrading their skills and knowledge. They reflect, seek feedback, and evolve—individually and collectively—to stay relevant and effective.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="dna-full-width-traits">
-                    <div class="dna-trait">
-                        <h3>Resilient and Adaptable</h3>
-                        <p>
-                            When faced with setbacks, these teams recover quickly and refocus on outcomes. Resilience enables them to sustain momentum even in uncertain or high-pressure environments.
-                        </p>
-                    </div>
-                    
-                    <div class="dna-trait">
-                        <h3>Compelling Goals with Clear Strategy</h3>
-                        <p>
-                            They rally around ambitious, well-defined goals supported by coherent strategies and execution plans. Every team member understands the "why," the "what," and the "how."
-                        </p>
-                    </div>
-                    
-                    <div class="dna-trait">
-                        <h3>Interdependent with Respect for Diverse Viewpoints</h3>
-                        <p>
-                            Success is driven by collaboration, not heroics. Teams value diverse perspectives, actively listen, and leverage complementary strengths to make better decisions.
-                        </p>
-                    </div>
-                    
-                    <div class="dna-trait">
-                        <h3>Commitment to Continuous Learning</h3>
-                        <p>
-                            High-performing teams invest in constantly upgrading their skills and knowledge. They reflect, seek feedback, and evolve—individually and collectively—to stay relevant and effective.
-                        </p>
-                    </div>
+            </div>
+            
+            <!-- Execution Strategy Content -->
+            <div id="execution-content" class="tl-topic-content">
+                <h3 class="tl-topic-title">Execution Strategy</h3>
+                <div class="wip-message">
+                    <p>🚧 Work In Progress</p>
+                    <p class="wip-subtitle">Content coming soon...</p>
                 </div>
             </div>
         </div>
