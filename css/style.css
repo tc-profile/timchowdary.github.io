@@ -614,6 +614,417 @@ body {
     margin-bottom: 2rem;
 }
 
+/* ==========================================
+   Elite Hire Case Study Styles
+   ========================================== */
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.case-study-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.case-study-subtitle {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    margin-top: -1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Case Study Grid */
+.case-study-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.card-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--bg-alt);
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Goal Card */
+.goal-card .card-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.goal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.goal-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.list-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.goal-list strong {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.goal-list p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+/* Challenge Card */
+.challenge-card .card-icon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.challenge-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+}
+
+.challenge-item:last-child {
+    margin-bottom: 0;
+}
+
+.challenge-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.challenge-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.challenge-text p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Solution Card */
+.solution-card .card-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.solution-intro {
+    font-size: 1.125rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.solution-workflow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.workflow-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.workflow-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.step-content h4 {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-color);
+}
+
+.step-content p {
+    margin: 0 0 1rem 0;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag-small {
+    padding: 0.25rem 0.625rem;
+    background: var(--bg-alt);
+    color: var(--primary-color);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.workflow-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    padding: 0.5rem 0;
+}
+
+/* Impact Card */
+.impact-card .card-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.impact-metrics {
+    display: grid;
+    gap: 2rem;
+}
+
+.impact-metric {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--bg-alt);
+    border-radius: 12px;
+}
+
+.metric-visual {
+    flex-shrink: 0;
+}
+
+.progress-circle {
+    width: 100px;
+    height: 100px;
+}
+
+.progress-circle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e5e7eb;
+    stroke-width: 3;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+.percentage {
+    fill: var(--primary-color);
+    font-size: 0.5em;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.stat-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.stat-box-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-box-arrow, .stat-box-icon {
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.metric-details h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.metric-details p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+/* Technology Stack Section */
+.tech-stack-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.tech-stack-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.tech-item:hover {
+    transform: translateX(5px);
+}
+
+.tech-icon {
+    font-size: 1.5rem;
+}
+
+/* CTA */
+.case-study-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
 /* Thought Leadership Section */
 .thought-leadership-nav {
     display: flex;
@@ -1081,6 +1492,41 @@ body {
     .project-nav-btn {
         width: 100%;
         padding: 0.75rem 1rem;
+    }
+    
+    /* Case Study Responsive */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .challenge-item, .workflow-step, .impact-metric {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .challenge-number, .step-number {
+        margin: 0 auto;
+    }
+
+    .challenge-item {
+        border-left: none;
+        border-top: 3px solid var(--primary-color);
+    }
+
+    .progress-circle, .stat-box {
+        margin: 0 auto;
+    }
+    
+    .tech-stack-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-study-badge {
+        font-size: 0.75rem;
+    }
+    
+    .case-study-subtitle {
+        font-size: 1rem;
     }
 }
 
