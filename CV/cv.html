@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Chowdary - Curriculum Vitae</title>
+    <style>
+        /* ========================================== */
+        /* Reset & Base Styles */
+        /* ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --bg-light: #f8fafc;
+            --accent-color: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.3;
+            color: var(--text-dark);
+            background: white;
+            max-width: 210mm; /* A4 width */
+            margin: 0 auto;
+            padding: 15px;
+            font-size: 9pt;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* ========================================== */
+        /* Print Styles */
+        /* ========================================== */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+
+            body {
+                padding: 0;
+                max-width: 100%;
+                font-size: 9pt;
+                width: 100%;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            .cv-section {
+                page-break-inside: auto;
+            }
+            
+            .cv-header {
+                page-break-after: avoid;
+            }
+            
+            a {
+                color: var(--text-dark);
+                text-decoration: none;
+            }
+
+            /* Optimize grids for portrait print */
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                page-break-inside: auto;
+                gap: 6px;
+                column-gap: 3px;
+            }
+
+            .section-content {
+                padding-left: 2px;
+            }
+
+            .skill-category {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                page-break-inside: auto;
+                gap: 5px;
+                column-gap: 3px;
+            }
+
+            .cert-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .experience-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .project-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Ensure section titles stay with content */
+            .section-title {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Ensure contact info wraps properly */
+            .contact-info {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        /* ========================================== */
+        /* Header Styles - Compact */
+        /* ========================================== */
+        .cv-header {
+            text-align: center;
+            padding: 8px 0 10px 0;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .cv-name {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .cv-title {
+            font-size: 10pt;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .cv-tagline {
+            font-size: 9pt;
+            color: var(--text-medium);
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 8pt;
+            color: var(--text-medium);
+            margin-top: 4px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        /* ========================================== */
+        /* Section Styles - Compact */
+        /* ========================================== */
+        .cv-section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid var(--primary-color);
+        }
+
+        .section-content {
+            padding-left: 5px;
+        }
+
+        /* ========================================== */
+        /* Professional Summary - Compact */
+        /* ========================================== */
+        .summary-text {
+            font-size: 8.5pt;
+            line-height: 1.4;
+            color: var(--text-medium);
+            text-align: justify;
+            margin-bottom: 4px;
+        }
+
+        /* ========================================== */
+        /* Experience Styles - Compact */
+        /* ========================================== */
+        .experience-item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+
+        .job-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .company-name {
+            font-size: 9pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1px;
+        }
+
+        .job-duration {
+            font-size: 8pt;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .job-location {
+            font-size: 8pt;
+            color: var(--text-medium);
+            margin-bottom: 3px;
+        }
+
+        .job-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-highlights li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 3px;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            color: var(--text-medium);
+        }
+
+        .job-highlights li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 7pt;
+        }
+
+        /* ========================================== */
+        /* Projects Styles - Compact */
+        /* ========================================== */
+        .project-item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .project-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .project-subtitle {
+            font-size: 8pt;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .project-highlights {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 2px;
+        }
+
+        .project-highlights li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 2px;
+            font-size: 8.5pt;
+            line-height: 1.3;
+            color: var(--text-medium);
+        }
+
+        .project-highlights li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tech-stack-inline {
+            font-size: 7.5pt;
+            color: var(--text-light);
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        /* ========================================== */
+        /* Skills Styles - Compact Two Column */
+        /* ========================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            column-gap: 3px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 3px;
+            }
+        }
+
+        .skill-category {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            padding-right: 2px;
+        }
+
+        .skill-category-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-list li {
+            padding: 1px 0;
+            font-size: 8pt;
+            color: var(--text-medium);
+        }
+
+        /* ========================================== */
+        /* Certifications Styles - Compact */
+        /* ========================================== */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            column-gap: 3px;
+        }
+
+        .cert-item {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            padding-right: 2px;
+        }
+
+        .cert-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1px;
+        }
+
+        .cert-issuer {
+            font-size: 7.5pt;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cert-date {
+            font-size: 7.5pt;
+            color: var(--text-light);
+        }
+
+        /* ========================================== */
+        /* Download Button */
+        /* ========================================== */
+        .download-section {
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 15px;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .download-btn.word-btn {
+            background: #2b579a;
+        }
+
+        .download-btn.word-btn:hover {
+            background: #1f4174;
+        }
+
+        /* ========================================== */
+        /* Responsive Design */
+        /* ========================================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .cv-name {
+                font-size: 18pt;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Download Button (Hidden in Print) -->
+    <div class="download-section no-print">
+        <div class="download-buttons">
+            <button class="download-btn" onclick="window.print()">📄 Download as PDF</button>
+            <button class="download-btn word-btn" onclick="downloadAsWord()">📝 Download as Word</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="cv-header">
+        <h1 class="cv-name">Tim Chowdary</h1>
+        <p class="cv-title">RSA Delivery Manager – AI Automations | Multi-Cloud Expert</p>
+        <p class="cv-tagline">AI Automations | Data Intelligence | Gen AI | Thought Leadership</p>
+        <div class="contact-info">
+            📧 <a href="mailto:tim.chowdary@gmail.com">tim.chowdary@gmail.com</a> | 
+            📱 +91 96115 15577 | 
+            💻 <a href="https://github.com/tc-personal" target="_blank">GitHub</a> | 
+            💼 <a href="https://www.linkedin.com/in/tim-chowdary/" target="_blank">LinkedIn</a> | 
+            🎥 <a href="https://www.youtube.com/@TimChowdary" target="_blank">YouTube</a> | 
+            🌐 <a href="https://tc-personal.github.io/timchowdary.github.io/" target="_blank">Portfolio</a>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="cv-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="section-content">
+            <p class="summary-text">
+                RSA Delivery Manager at Databricks specializing in enterprise-scale AI automations, multi-agent frameworks, and Data Intelligence transformations. Led delivery of AI-powered migration platforms for Europe's largest electrical organization and agentic recruiting automation systems. Expert in Databricks, AWS, multi-cloud ecosystems with 20+ years building high-performing Data & AI teams delivering measurable business impact. Active content creator on AI/leadership (YouTube, LinkedIn), mentor at engineering colleges, passionate about translating complex business needs into scalable, governed AI solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="cv-section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="section-content">
+            
+            <!-- Databricks -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Databricks</div>
+                        <div class="job-title">RSA Delivery Manager – AI Automations</div>
+                        <div class="job-location">Bangalore, India</div>
+                    </div>
+                    <div class="job-duration">Jan 2024 – Present</div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Led enterprise-scale migrations and AI-driven code modernization for Europe's largest electrical organization</li>
+                    <li>Designed AI-powered metadata catalog with Spark lineage tracking, enabling audit-ready traceability</li>
+                    <li>Built governance frameworks: access controls, sensitive SQL detection, data classification, validation rules</li>
+                    <li>Improved delivery consistency by 40% through standardized automation, quality gates, and lineage capture</li>
+                    <li>Evangelized product vision across engineering, field teams, customers—balancing delivery with scalability</li>
+                    <li>Developed generative AI assistants and scoping tools reducing manual engineering effort</li>
+                </ul>
+            </div>
+
+            <!-- Amazon -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">Amazon</div>
+                        <div class="job-title">Data Engineering Manager</div>
+                        <div class="job-location">Bangalore, India</div>
+                    </div>
+                    <div class="job-duration">Oct 2015 – Dec 2023</div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Led data engineering for large-scale analytics platforms across Amazon's seller ecosystem</li>
+                    <li>Implemented ML-based seller forecasting (Random Forest) improving planning efficiency</li>
+                    <li>Designed enterprise BI pipelines using Redshift, EMR, Step Functions—enhanced reporting reliability</li>
+                    <li>Built high-performing data engineering teams, established pipeline development best practices</li>
+                </ul>
+            </div>
+
+            <!-- Earlier Roles -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="company-name">TCS, HCL Technologies, iGATE</div>
+                        <div class="job-title">Senior Technical Lead → Technical Lead → Software Engineer</div>
+                        <div class="job-location">Bangalore, India & UK</div>
+                    </div>
+                    <div class="job-duration">Sep 2005 – Sep 2015</div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Led enterprise data/application initiatives, mentored distributed teams, delivered large-scale systems</li>
+                    <li>Drove technical excellence across global customers, managed cross-geographical coordination</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section class="cv-section">
+        <h2 class="section-title">Key Projects & Achievements</h2>
+        <div class="section-content">
+            
+            <!-- Elite Hire -->
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">Elite Hire</div>
+                    <div class="project-subtitle">AI-Powered Smart Hiring Platform</div>
+                </div>
+                <ul class="project-highlights">
+                    <li><strong>Impact:</strong> 10x faster hiring, 95% match accuracy, 40% fewer interview cycles. Processes 1000+ applications/day</li>
+                    <li><strong>Innovation:</strong> Multi-agent AI system (resume parsing, skill extraction, job matching, scheduling)</li>
+                    <li><strong>Tech:</strong> Databricks Unity Catalog, Mosaic AI, LangChain, Vector Search, ChromaDB, Delta Lake, Python</li>
+                </ul>
+            </div>
+
+            <!-- Scopilot -->
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">Scopilot</div>
+                    <div class="project-subtitle">AI-Driven Cloud Migration Intelligence Platform</div>
+                </div>
+                <ul class="project-highlights">
+                    <li><strong>Scale:</strong> Enterprise migration for Europe's largest electrical org. 40% improvement in delivery consistency</li>
+                    <li><strong>Features:</strong> AI-powered code conversion, automated lineage tracking, validation, quality gates, audit-ready metadata</li>
+                    <li><strong>Tech:</strong> Databricks, Gen AI, Model Context Protocol (MCP), Spark, Delta Lake, Python, SQL</li>
+                </ul>
+            </div>
+
+            <!-- Amazon Seller Intelligence -->
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">Amazon Seller Intelligence</div>
+                    <div class="project-subtitle">Intelligent Data Lake for Global Seller Analytics</div>
+                </div>
+                <ul class="project-highlights">
+                    <li><strong>Impact:</strong> 30% reduced stock pile-up, 50%+ fewer out-of-stock situations, improved seller profitability</li>
+                    <li><strong>Intelligence:</strong> ML demand forecasting (6-12 month projections), seasonal trends. Serves millions of sellers globally</li>
+                    <li><strong>Tech:</strong> AWS Redshift, EMR, S3, Lambda, Glue, Kinesis, Random Forest ML, Python</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="cv-section">
+        <h2 class="section-title">Technical Skills & Expertise</h2>
+        <div class="section-content">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">AI & Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>Generative AI & LLMs</li>
+                        <li>Multi-Agent AI Systems</li>
+                        <li>LangChain & LangGraph</li>
+                        <li>Mosaic AI (Databricks)</li>
+                        <li>Vector Search & RAG</li>
+                        <li>Model Context Protocol</li>
+                        <li>Prompt Engineering</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Data Platforms & Cloud</h3>
+                    <ul class="skill-list">
+                        <li>Databricks Platform</li>
+                        <li>Delta Lake & Unity Catalog</li>
+                        <li>Apache Spark & PySpark</li>
+                        <li>AWS (Redshift, EMR, S3, Lambda)</li>
+                        <li>Multi-Cloud Architecture</li>
+                        <li>Data Lakehouse Design</li>
+                        <li>ETL/ELT Pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Engineering & Leadership</h3>
+                    <ul class="skill-list">
+                        <li>Python & SQL (Advanced)</li>
+                        <li>Data Architecture & Governance</li>
+                        <li>Data Lineage & Metadata Mgmt</li>
+                        <li>Technical Team Leadership</li>
+                        <li>Product Management</li>
+                        <li>Stakeholder Management</li>
+                        <li>Docker, Kubernetes, CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="cv-section">
+        <h2 class="section-title">Certifications & Accreditations</h2>
+        <div class="section-content">
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-title">Prompt Engineering with ChatGPT</div>
+                    <span class="cert-issuer">LinkedIn</span> <span class="cert-date">| July 2025</span>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Critical Thinking for Decision Making</div>
+                    <span class="cert-issuer">LinkedIn</span> <span class="cert-date">| March 2024</span>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Prompt Engineering – Talk to AI</div>
+                    <span class="cert-issuer">LinkedIn</span> <span class="cert-date">| March 2024</span>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Generative AI Fundamentals</div>
+                    <span class="cert-issuer">Databricks</span> <span class="cert-date">| Feb 2024</span>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Databricks Lakehouse Fundamentals</div>
+                    <span class="cert-issuer">Databricks</span> <span class="cert-date">| Dec 2024</span>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">AWS Solutions Architect – Associate</div>
+                    <span class="cert-issuer">Amazon Web Services</span> <span class="cert-date">| Jan 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thought Leadership -->
+    <section class="cv-section">
+        <h2 class="section-title">Thought Leadership & Community Engagement</h2>
+        <div class="section-content">
+            <p class="summary-text">
+                Active YouTube content creator covering Gen AI, leadership, software development • LinkedIn contributor on AI automation, team management, cloud architecture • Guest speaker at engineering colleges • Mentor to aspiring data engineers and AI practitioners • Builder of mini-projects and open-source contributions • Advocate for high-performing team culture, customer obsession, continuous learning
+            </p>
+        </div>
+    </section>
+
+    <!-- JavaScript for Word Download -->
+    <script>
+        function downloadAsWord() {
+            const header = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+                      xmlns:w='urn:schemas-microsoft-com:office:word' 
+                      xmlns='http://www.w3.org/TR/REC-html40'>
+                <head>
+                    <meta charset='utf-8'>
+                    <title>Tim Chowdary - Curriculum Vitae</title>
+                    <style>
+                        body {
+                            font-family: 'Calibri', 'Arial', sans-serif;
+                            line-height: 1.3;
+                            color: #1e293b;
+                            max-width: 210mm;
+                            margin: 0 auto;
+                            padding: 15px;
+                            font-size: 9pt;
+                        }
+                        h1 { font-size: 20pt; color: #1e293b; margin-bottom: 3px; }
+                        h2 { font-size: 11pt; color: #1e293b; border-bottom: 1.5px solid #2563eb; padding-bottom: 2px; margin-top: 12px; margin-bottom: 6px; }
+                        h3 { font-size: 9pt; color: #2563eb; font-weight: 700; margin-top: 8px; margin-bottom: 3px; }
+                        p { font-size: 8.5pt; margin-bottom: 4px; line-height: 1.4; }
+                        ul { margin-left: 12px; }
+                        li { font-size: 8.5pt; margin-bottom: 3px; line-height: 1.4; }
+                        .cv-header { text-align: center; border-bottom: 2px solid #2563eb; padding-bottom: 10px; margin-bottom: 12px; }
+                        .cv-title { font-size: 10pt; color: #2563eb; font-weight: 600; }
+                        .cv-tagline { font-size: 9pt; color: #475569; }
+                        .contact-info { font-size: 8pt; color: #475569; margin-top: 4px; }
+                        .job-title { font-size: 9.5pt; font-weight: 700; color: #1e293b; }
+                        .company-name { font-size: 9pt; font-weight: 600; color: #2563eb; }
+                        .job-duration { font-size: 8pt; color: #64748b; }
+                        .job-location { font-size: 8pt; color: #475569; }
+                        .project-title { font-size: 9.5pt; font-weight: 700; color: #1e293b; }
+                        .project-subtitle { font-size: 8pt; color: #2563eb; font-weight: 600; font-style: italic; }
+                        .cert-title { font-weight: 700; font-size: 8.5pt; }
+                        .cert-issuer { color: #2563eb; font-weight: 600; font-size: 7.5pt; }
+                        .no-print { display: none; }
+                    </style>
+                </head>
+                <body>
+            `;
+
+            const content = document.body.cloneNode(true);
+            const downloadSection = content.querySelector('.download-section');
+            if (downloadSection) {
+                downloadSection.remove();
+            }
+
+            let htmlContent = content.innerHTML;
+            htmlContent = htmlContent.replace(/class="no-print"/g, 'style="display:none"');
+
+            const footer = '</body></html>';
+            const fullContent = header + htmlContent + footer;
+
+            const blob = new Blob(['\ufeff', fullContent], {
+                type: 'application/msword'
+            });
+
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Tim_Chowdary_CV.doc';
+            
+            document.body.appendChild(link);
+            link.click();
+            
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+</html>
