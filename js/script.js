@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1); // Remove the # from href
             showSection(targetId);
             
+            // Update active state
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
             // Smooth scroll to top of content
             document.getElementById(targetId === 'welcome' ? 'welcome' : targetId === 'about' ? 'about' : targetId).scrollIntoView({
                 behavior: 'smooth',
@@ -43,6 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    
+    // Initialize default view - Welcome section
+    showSection('welcome');
+    
+    // Set Welcome link as active on page load
+    const welcomeLink = document.querySelector('.sidebar-menu a[href="#welcome"]');
+    if (welcomeLink) {
+        sidebarLinks.forEach(link => link.classList.remove('active'));
+        welcomeLink.classList.add('active');
+    }
+    
+    // Scroll to Welcome section on page load
+    setTimeout(() => {
+        const welcomeSection = document.getElementById('welcome');
+        if (welcomeSection) {
+            welcomeSection.scrollIntoView({
+                behavior: 'auto',
+                block: 'start'
+            });
+        }
+    }, 100);
 });
 
 // Mobile menu toggle
@@ -81,7 +106,7 @@ document.querySelectorAll('a[href^="#"]:not(.sidebar-menu a)').forEach(anchor =>
 
 // Add active class to sidebar links on scroll (only for visible sections)
 window.addEventListener('scroll', () => {
-    let current = '';
+    let current = 'welcome'; // Default to welcome section
     const sections = document.querySelectorAll('.hero, .section');
     
     sections.forEach(section => {
