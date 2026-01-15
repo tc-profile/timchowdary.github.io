@@ -234,6 +234,7 @@
             <div class="thought-leadership-nav">
                 <button class="tl-nav-btn active" data-topic="dna">DNA</button>
                 <button class="tl-nav-btn" data-topic="execution">Execution Strategy</button>
+                <button class="tl-nav-btn" data-topic="frameworks">Frameworks and Mental Models</button>
             </div>
             
             <!-- DNA Content -->
@@ -499,6 +500,38 @@
                     <p class="final-emphasis">
                         <strong>Strong teams build great products. Great teams build great companies.</strong>
                     </p>
+                </div>
+            </div>
+
+            <!-- Frameworks and Mental Models Content -->
+            <div id="frameworks-content" class="tl-topic-content">
+                <h3 class="tl-topic-title">Frameworks and Mental Models</h3>
+                
+                <div class="pdf-viewer-container">
+                    <div class="pdf-controls">
+                        <button id="prev-page" class="pdf-nav-btn" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <div class="pdf-page-info">
+                            <span id="page-num">1</span> / <span id="page-count">-</span>
+                        </div>
+                        <button id="next-page" class="pdf-nav-btn">
+                            Next
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="pdf-canvas-wrapper">
+                        <canvas id="pdf-canvas"></canvas>
+                    </div>
+                    <div class="pdf-loading" id="pdf-loading">
+                        <div class="spinner"></div>
+                        <p>Loading PDF...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1271,6 +1304,8 @@
         </footer>
     </div><!-- End Main Content -->
 
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

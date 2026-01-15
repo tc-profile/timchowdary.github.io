@@ -214,9 +214,131 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetContent = document.getElementById(`${topic}-content`);
             if (targetContent) {
                 targetContent.classList.add('active');
+                
+                // Initialize PDF viewer if Frameworks topic is selected
+                if (topic === 'frameworks') {
+                    initPDFViewer();
+                }
             }
         });
     });
+    
+    // PDF Viewer functionality
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageIsRendering = false;
+    let pageNumIsPending = null;
+    
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const pageNumElem = document.getElementById('page-num');
+    const pageCountElem = document.getElementById('page-count');
+    const pdfLoading = document.getElementById('pdf-loading');
+    
+    function initPDFViewer() {
+        if (!pdfDoc && typeof pdfjsLib !== 'undefined' && canvas) {
+            // Set worker source
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            
+            // Load PDF
+            const pdfPath = 'Thought Leadership/Mental_Models_vs_Frameworks.pdf';
+            
+            pdfjsLib.getDocument(pdfPath).promise.then((pdfDoc_) => {
+                pdfDoc = pdfDoc_;
+                pageCountElem.textContent = pdfDoc.numPages;
+                
+                // Hide loading indicator
+                if (pdfLoading) {
+                    pdfLoading.classList.add('hidden');
+                }
+                
+                // Render first page
+                renderPage(pageNum);
+                
+                // Setup navigation buttons
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        if (pageNum <= 1) return;
+                        pageNum--;
+                        queueRenderPage(pageNum);
+                    });
+                }
+                
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        if (pageNum >= pdfDoc.numPages) return;
+                        pageNum++;
+                        queueRenderPage(pageNum);
+                    });
+                }
+            }).catch(err => {
+                console.error('Error loading PDF:', err);
+                if (pdfLoading) {
+                    pdfLoading.innerHTML = '<p style="color: red;">Error loading PDF. Please try again later.</p>';
+                }
+            });
+        } else if (pdfDoc) {
+            // PDF already loaded, just render current page
+            renderPage(pageNum);
+        }
+    }
+    
+    function renderPage(num) {
+        if (!pdfDoc || !canvas || !ctx) return;
+        
+        pageIsRendering = true;
+        
+        // Get page
+        pdfDoc.getPage(num).then((page) => {
+            // Set scale for better quality
+            const scale = 1.5;
+            const viewport = page.getViewport({ scale: scale });
+            
+            // Set canvas dimensions
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            
+            // Render PDF page
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            
+            const renderTask = page.render(renderCtx);
+            
+            renderTask.promise.then(() => {
+                pageIsRendering = false;
+                
+                if (pageNumIsPending !== null) {
+                    renderPage(pageNumIsPending);
+                    pageNumIsPending = null;
+                }
+            });
+        });
+        
+        // Update page number
+        if (pageNumElem) {
+            pageNumElem.textContent = num;
+        }
+        
+        // Update button states
+        if (prevBtn) {
+            prevBtn.disabled = (num <= 1);
+        }
+        if (nextBtn) {
+            nextBtn.disabled = (num >= pdfDoc.numPages);
+        }
+    }
+    
+    function queueRenderPage(num) {
+        if (pageIsRendering) {
+            pageNumIsPending = num;
+        } else {
+            renderPage(num);
+        }
+    }
     
     // About Me topic switching
     const aboutNavBtns = document.querySelectorAll('.about-nav-btn');
