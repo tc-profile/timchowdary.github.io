@@ -619,60 +619,412 @@
                 
                 <!-- Introduction Sub-Content -->
                 <div id="introduction-subcontent" class="frameworks-sub-content active">
-                    <div class="pdf-viewer-container">
-                        <div class="pdf-controls">
-                            <button id="prev-page-intro" class="pdf-nav-btn" disabled>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M15 18l-6-6 6-6"/>
-                                </svg>
-                                Previous
-                            </button>
-                            <div class="pdf-page-info">
-                                <span id="page-num-intro">1</span> / <span id="page-count-intro">-</span>
+                    <div class="frameworks-content-wrapper">
+                        <!-- Header -->
+                        <div class="case-study-header">
+                            <span class="case-study-badge">🧠 Strategic Thinking</span>
+                            <h3 class="project-title">Mental Models vs Frameworks</h3>
+                            <p class="case-study-subtitle">Understanding the fundamental difference between mental models and frameworks for better decision-making</p>
+                        </div>
+
+                        <!-- Key Concepts Grid -->
+                        <div class="case-study-grid">
+                            <!-- Mental Models Card -->
+                            <div class="case-study-card goal-card">
+                                <div class="card-header">
+                                    <div class="card-icon">🧩</div>
+                                    <h3>Mental Models</h3>
+                                </div>
+                                <div class="concept-content">
+                                    <p class="concept-intro">
+                                        Mental models are <strong>internal representations</strong> of how the world works. They are cognitive frameworks that help us understand, predict, and navigate complex situations.
+                                    </p>
+                                    
+                                    <h4 class="concept-subtitle">Key Characteristics:</h4>
+                                    <ul class="concept-list">
+                                        <li>
+                                            <span class="concept-icon">🎯</span>
+                                            <div>
+                                                <strong>Abstract & Flexible</strong>
+                                                <p>Adaptable thinking patterns that can be applied across different domains</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">🔄</span>
+                                            <div>
+                                                <strong>Interconnected</strong>
+                                                <p>Multiple models can be combined to understand complex problems</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">💡</span>
+                                            <div>
+                                                <strong>Intuitive Understanding</strong>
+                                                <p>Helps develop deep, intuitive grasp of underlying principles</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">🌍</span>
+                                            <div>
+                                                <strong>Universal Application</strong>
+                                                <p>Can be applied to diverse situations and contexts</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="example-box">
+                                        <h5>📚 Examples:</h5>
+                                        <div class="example-tags">
+                                            <span class="example-tag">First Principles Thinking</span>
+                                            <span class="example-tag">Second-Order Thinking</span>
+                                            <span class="example-tag">Inversion</span>
+                                            <span class="example-tag">Circle of Competence</span>
+                                            <span class="example-tag">Margin of Safety</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button id="next-page-intro" class="pdf-nav-btn">
-                                Next
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 18l6-6-6-6"/>
-                                </svg>
-                            </button>
+
+                            <!-- Frameworks Card -->
+                            <div class="case-study-card challenge-card">
+                                <div class="card-header">
+                                    <div class="card-icon">📋</div>
+                                    <h3>Frameworks</h3>
+                                </div>
+                                <div class="concept-content">
+                                    <p class="concept-intro">
+                                        Frameworks are <strong>structured methodologies</strong> or step-by-step processes designed to solve specific types of problems in a systematic way.
+                                    </p>
+                                    
+                                    <h4 class="concept-subtitle">Key Characteristics:</h4>
+                                    <ul class="concept-list">
+                                        <li>
+                                            <span class="concept-icon">📐</span>
+                                            <div>
+                                                <strong>Structured & Prescriptive</strong>
+                                                <p>Defined steps and processes to follow</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">🎯</span>
+                                            <div>
+                                                <strong>Domain-Specific</strong>
+                                                <p>Designed for particular types of problems or industries</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">⚡</span>
+                                            <div>
+                                                <strong>Actionable & Practical</strong>
+                                                <p>Provides clear steps and deliverables</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="concept-icon">📊</span>
+                                            <div>
+                                                <strong>Measurable Outcomes</strong>
+                                                <p>Often includes metrics and success criteria</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="example-box">
+                                        <h5>📚 Examples:</h5>
+                                        <div class="example-tags">
+                                            <span class="example-tag">SWOT Analysis</span>
+                                            <span class="example-tag">OKRs</span>
+                                            <span class="example-tag">Agile/Scrum</span>
+                                            <span class="example-tag">Design Thinking</span>
+                                            <span class="example-tag">SCAMPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pdf-canvas-wrapper">
-                            <canvas id="pdf-canvas-intro"></canvas>
+
+                        <!-- Comparison Section -->
+                        <div class="case-study-card solution-card" style="margin-top: 2rem;">
+                            <div class="card-header">
+                                <div class="card-icon">⚖️</div>
+                                <h3>When to Use Each</h3>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <div class="comparison-header">
+                                        <span class="comparison-icon">🧩</span>
+                                        <h4>Use Mental Models When:</h4>
+                                    </div>
+                                    <ul class="comparison-list">
+                                        <li>You need to understand the underlying principles of a problem</li>
+                                        <li>The situation is ambiguous or novel</li>
+                                        <li>You want to develop long-term thinking capabilities</li>
+                                        <li>Multiple perspectives are needed for complex decisions</li>
+                                        <li>You're building strategic intuition</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-item">
+                                    <div class="comparison-header">
+                                        <span class="comparison-icon">📋</span>
+                                        <h4>Use Frameworks When:</h4>
+                                    </div>
+                                    <ul class="comparison-list">
+                                        <li>You need a structured approach to a known problem</li>
+                                        <li>Team alignment and consistent execution are critical</li>
+                                        <li>You want repeatable, scalable processes</li>
+                                        <li>Clear deliverables and timelines are required</li>
+                                        <li>You're solving domain-specific challenges</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pdf-loading" id="pdf-loading-intro">
-                            <div class="spinner"></div>
-                            <p>Loading PDF...</p>
+
+                        <!-- Key Insight -->
+                        <div class="execution-final" style="margin-top: 2rem;">
+                            <h4 class="final-thought-title">💡 Key Insight</h4>
+                            <p>
+                                The most effective leaders and problem-solvers use <strong>both mental models and frameworks</strong> in tandem. Mental models provide the deep understanding and strategic thinking, while frameworks offer the practical structure for execution.
+                            </p>
+                            <p class="final-emphasis">
+                                <strong>Think with mental models. Execute with frameworks.</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- SCAMPER Sub-Content -->
                 <div id="scamper-subcontent" class="frameworks-sub-content">
-                    <div class="pdf-viewer-container">
-                        <div class="pdf-controls">
-                            <button id="prev-page-scamper" class="pdf-nav-btn" disabled>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M15 18l-6-6 6-6"/>
-                                </svg>
-                                Previous
-                            </button>
-                            <div class="pdf-page-info">
-                                <span id="page-num-scamper">1</span> / <span id="page-count-scamper">-</span>
+                    <div class="frameworks-content-wrapper">
+                        <!-- Header -->
+                        <div class="case-study-header">
+                            <span class="case-study-badge">🎨 Creative Problem Solving</span>
+                            <h3 class="project-title">SCAMPER Framework</h3>
+                            <p class="case-study-subtitle">A powerful creative thinking technique to generate innovative ideas and improve existing solutions</p>
+                        </div>
+
+                        <!-- Introduction -->
+                        <div class="execution-intro">
+                            <p>
+                                <strong>SCAMPER</strong> is a creative thinking framework that helps you explore different ways to innovate, improve products, services, or processes. Each letter represents a different thinking strategy that prompts you to look at problems from unique angles.
+                            </p>
+                            <p>
+                                Originally developed by Bob Eberle, SCAMPER is widely used in design thinking, product development, and strategic planning to break conventional thinking patterns and discover breakthrough solutions.
+                            </p>
+                        </div>
+
+                        <!-- SCAMPER Techniques -->
+                        <div class="scamper-techniques-grid">
+                            <!-- Substitute -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">S</div>
+                                    <h3>Substitute</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Replace components, materials, people, or processes with alternatives to see if you can improve the outcome.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What materials or resources can you substitute?</li>
+                                        <li>Can you replace a process with a different approach?</li>
+                                        <li>What if you used a different technology or tool?</li>
+                                        <li>Can you substitute one feature for another?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Zoom substituted in-person meetings with virtual video conferencing
+                                </div>
                             </div>
-                            <button id="next-page-scamper" class="pdf-nav-btn">
-                                Next
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 18l6-6-6-6"/>
-                                </svg>
-                            </button>
+
+                            <!-- Combine -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">C</div>
+                                    <h3>Combine</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Merge two or more elements, ideas, or functions to create something new and potentially more valuable.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What ideas, products, or services can you combine?</li>
+                                        <li>Can you merge different features or functions?</li>
+                                        <li>What if you combined different user groups or markets?</li>
+                                        <li>Can you integrate complementary technologies?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Smartphone combined phone, camera, music player, and computer
+                                </div>
+                            </div>
+
+                            <!-- Adapt -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">A</div>
+                                    <h3>Adapt</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Adjust or modify something to serve a different purpose or work in a new context.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What else is like this? What can you copy or adapt?</li>
+                                        <li>What ideas from other industries can you apply?</li>
+                                        <li>How can you adjust this to fit a different context?</li>
+                                        <li>What can you learn from similar situations?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Netflix adapted DVD rental model to streaming services
+                                </div>
+                            </div>
+
+                            <!-- Modify -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">M</div>
+                                    <h3>Modify / Magnify / Minify</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Change the attributes, scale, or emphasis of something to create new possibilities.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What can you make larger, stronger, or more frequent?</li>
+                                        <li>What can you make smaller, lighter, or more compact?</li>
+                                        <li>Can you change the shape, color, or design?</li>
+                                        <li>What features can you exaggerate or minimize?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Tesla magnified battery capacity and minimized charging time
+                                </div>
+                            </div>
+
+                            <!-- Put to Another Use -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">P</div>
+                                    <h3>Put to Another Use</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Find new applications or markets for existing products, services, or ideas.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What else can this be used for?</li>
+                                        <li>Can you target a different audience or market?</li>
+                                        <li>How would different users apply this?</li>
+                                        <li>Can you repurpose waste or by-products?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Baking soda repositioned from baking ingredient to odor eliminator
+                                </div>
+                            </div>
+
+                            <!-- Eliminate -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">E</div>
+                                    <h3>Eliminate</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Remove elements, simplify, or reduce to essentials to improve efficiency or focus.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What can you remove without losing value?</li>
+                                        <li>Can you simplify or streamline the process?</li>
+                                        <li>What features are unnecessary or redundant?</li>
+                                        <li>What would happen if you removed this entirely?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Apple eliminated physical keyboards from smartphones
+                                </div>
+                            </div>
+
+                            <!-- Reverse/Rearrange -->
+                            <div class="scamper-technique-card">
+                                <div class="scamper-technique-header">
+                                    <div class="scamper-letter-badge">R</div>
+                                    <h3>Reverse / Rearrange</h3>
+                                </div>
+                                <p class="technique-description">
+                                    Flip the order, reverse the process, or reorganize components to discover new approaches.
+                                </p>
+                                <div class="technique-questions">
+                                    <h4>Key Questions:</h4>
+                                    <ul>
+                                        <li>What if you reversed the process or sequence?</li>
+                                        <li>Can you turn it upside down or inside out?</li>
+                                        <li>What if you rearranged the components?</li>
+                                        <li>Can you change the order of operations?</li>
+                                    </ul>
+                                </div>
+                                <div class="technique-example">
+                                    <strong>💡 Example:</strong> Airbnb reversed the hotel model - guests stay in hosts' homes
+                                </div>
+                            </div>
                         </div>
-                        <div class="pdf-canvas-wrapper">
-                            <canvas id="pdf-canvas-scamper"></canvas>
+
+                        <!-- How to Use SCAMPER -->
+                        <div class="case-study-card impact-card" style="margin-top: 3rem;">
+                            <div class="card-header">
+                                <div class="card-icon">🚀</div>
+                                <h3>How to Apply SCAMPER</h3>
+                            </div>
+                            <div class="solution-workflow">
+                                <div class="workflow-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Define the Challenge</h4>
+                                        <p>Clearly articulate the product, service, or problem you want to improve or innovate.</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">↓</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Ask SCAMPER Questions</h4>
+                                        <p>Systematically go through each SCAMPER technique and ask the relevant questions.</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">↓</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Generate Ideas</h4>
+                                        <p>Brainstorm freely without judgment. Capture all ideas, even unconventional ones.</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">↓</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Evaluate & Refine</h4>
+                                        <p>Review your ideas, select the most promising ones, and develop them further.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pdf-loading" id="pdf-loading-scamper">
-                            <div class="spinner"></div>
-                            <p>Loading PDF...</p>
+
+                        <!-- Benefits -->
+                        <div class="execution-final" style="margin-top: 2rem;">
+                            <h4 class="final-thought-title">✨ Why SCAMPER Works</h4>
+                            <p>
+                                SCAMPER provides a <strong>structured approach to creative thinking</strong> that prevents mental blocks and encourages systematic exploration of possibilities. By forcing you to look at problems from seven different angles, it helps break conventional thinking patterns and reveals innovative solutions that might otherwise remain hidden.
+                            </p>
+                            <p class="final-emphasis">
+                                <strong>Great innovations often come from asking the right questions, not having all the answers.</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1447,8 +1799,6 @@
         </footer>
     </div><!-- End Main Content -->
 
-    <!-- PDF.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
