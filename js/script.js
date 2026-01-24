@@ -242,6 +242,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Tech Strategy topic switching
+    const tsNavBtns = document.querySelectorAll('.ts-nav-btn');
+    const tsTopicContents = document.querySelectorAll('.ts-topic-content');
+    
+    tsNavBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            
+            // Remove active class from all buttons
+            tsNavBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all topic contents
+            tsTopicContents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected topic content
+            const targetContent = document.getElementById(`${topic}-content`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
     
     // Frameworks Sub-Navigation switching
     const frameworksSubBtns = document.querySelectorAll('.frameworks-sub-btn');
