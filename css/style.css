@@ -2025,6 +2025,68 @@ body {
     line-height: 1.5;
 }
 
+/* YouTube Tutorials Subsection */
+.tutorials-section {
+    margin-top: 3rem;
+}
+
+.tutorials-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.tutorials-section-title {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.playlist-link {
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.playlist-link:hover {
+    text-decoration: underline;
+}
+
+.youtube-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.yt-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(200, 0, 0, 0.88);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    padding-left: 4px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.youtube-card:hover .yt-play-overlay {
+    background: rgba(200, 0, 0, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
 /* Contact Section */
 .contact-content {
     text-align: center;
